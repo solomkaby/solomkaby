@@ -1,5 +1,5 @@
 {
-	"name": "solomka",
+	"name": "solomkaby",
 	"version": "1.0.0",
 	"description": "",
 	"main": "app.js",
@@ -15,15 +15,15 @@
 	"browserslist": "> 0.25%, not dead",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/alkhimenok/solomka.git"
+		"url": "git+https://github.com/solomkaby/solomkaby.git"
 	},
 	"keywords": [],
 	"author": "Kirill Alkhimenok <alkhimenok.kirill.leonidovich@gmail.com>",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/alkhimenok/solomka/issues"
+		"url": "https://github.com/solomkaby/solomkaby/issues"
 	},
-	"homepage": "https://github.com/alkhimenok/solomka#readme",
+	"homepage": "https://github.com/solomkaby/solomkaby#readme",
 	"devDependencies": {
 		"@babel/core": "^7.16.0",
 		"@babel/polyfill": "^7.12.1",
