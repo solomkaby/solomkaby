@@ -1,0 +1,9 @@
+{
+	"port": 5000,
+	"adminEmailData": {
+		"email": "salomka.by.test@gmail.com",
+		"password": "hgE.@N9tC@&z9y*"
+	},
+	"locationAPI": "",
+	"mapsAPI": "https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa9daf1c9cebba007e182233bef181e4d8b0d195c6cdbd3d5b3708217385b6f72&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"
+}
