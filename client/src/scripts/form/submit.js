@@ -9,8 +9,6 @@ export const submitForm = e => {
 
 	if ($btnSendForm.classList.contains('_disable')) return
 
-	console.log('submit');
-
 	const { value: name } = $inputUserName
 	const { value: phone } = $inputUserPhone
 
