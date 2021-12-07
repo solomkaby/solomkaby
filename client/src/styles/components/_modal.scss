@@ -1,0 +1,97 @@
+.modal {
+	position: fixed;
+	top: -30%;
+	left: 50%;
+	z-index: 4;
+	transform: translate(-50%, 0);
+	background-color: $secondaryColor;
+	transition: $longDelay;
+	.modal__btn_close {
+		position: absolute;
+		right: 4%;
+		top: 10%;
+		transform: rotate(45deg);
+		@include flex(center, center);
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0%;
+			width: 100%;
+			height: 10%;
+			background-color: $whiteColor;
+			border-radius: 8px;
+			transition: $delay;
+			pointer-events: none;
+		}
+		&::before {
+			transform: rotate(90deg);
+		}
+		@media screen and (hover: hover) {
+			&:hover {
+				&::before,
+				&::after {
+					background-color: $errorColor;
+				}
+			}
+		}
+		@media screen and (min-width: $breackpointSMMin) {
+			width: 25px;
+			height: 25px;
+			&:active {
+				width: 21px;
+				right: calc(4% + 2px);
+			}
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			width: calc(0px + 25 * (100vw / 370));
+			height: calc(0px + 25 * (100vw / 370));
+		}
+	}
+	.modal__body {
+		width: 90%;
+		@media screen and (min-width: $breackpointSMMin) {
+			padding: 20px 20px 40px;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			padding: calc(0px + 20 * (100vw / 370)) calc(0px + 20 * (100vw / 370)) calc(0px + 40 * (100vw / 370));
+		}
+	}
+	.modal__title {
+		font-size: 3rem;
+		line-height: 3rem;
+		color: $whiteColor;
+		@media screen and (min-width: $breackpointSMMin) {
+			margin: 0 0 20px 0;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 20 * (100vw / 370)) 0;
+		}
+	}
+	.modal__subtitle {
+		font-size: 1.8rem;
+		line-height: 2.2rem;
+		color: $transparentBackgroundPrimaryColor;
+	}
+	@media screen and (min-width: $breackpointSMMin) {
+		width: 450px;
+		border-radius: 10px;
+	}
+	@media screen and (max-width: $breackpointSMMax) {
+		width: 100%;
+		border-radius: 0 0 10px 10px;
+	}
+	@media screen and (max-width: $breackpointXSMax) {
+		border-radius: 0 0 calc(0px + 10 * (100vw / 370)) calc(0px + 10 * (100vw / 370));
+	}
+	&._show {
+		@media screen and (min-width: $breackpointMDMin) {
+			top: 50px;
+		}
+		@media screen and (max-width: $breackpointSMMax) {
+			top: 0;
+		}
+	}
+}

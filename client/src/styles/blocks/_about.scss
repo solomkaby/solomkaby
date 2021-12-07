@@ -1,0 +1,84 @@
+.about {
+	background-color: $backgroundPrimaryColor;
+	// .about__headline {
+	// }
+	.about__content {
+		@include flex(center, space-between);
+		@media screen and (max-width: $breackpointMDMax) {
+			flex-direction: column;
+		}
+	}
+	.about__picture {
+		@media screen and (min-width: $breackpointLGMin) {
+			width: calc(50% - 40px);
+		}
+		@media screen and (max-width: $breackpointLGMax) {
+			margin: 0 0 16px 0;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 16 * (100vw / 370)) 0;
+		}
+	}
+	// .about__img {
+	// }
+	.about__baner {
+		@media screen and (min-width: $breackpointLGMin) {
+			width: 50%;
+		}
+	}
+	.about__description {
+		@include removeMB;
+		@media screen and (min-width: $breackpointXXLMin) {
+			margin: 0 0 60px 0;
+		}
+		@media screen and (max-width: $breackpointXLMax) {
+			margin: 0 0 calc(24px + 36 * ((100vw - 370px) / (1180 - 370))) 0;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 24 * (100vw / 370)) 0;
+		}
+	}
+	.about__text {
+		color: $textSecondaryColor;
+		font-size: 1.6rem;
+		span {
+			color: $textPrimaryColor;
+			font-family: 'ubuntuMedium';
+			font-size: 1.8rem;
+		}
+		@media screen and (min-width: $breackpointXXLMin) {
+			margin: 0 0 20px 0;
+			line-height: 2.8rem;
+		}
+		@media screen and (max-width: $breackpointXLMax) {
+			margin: 0 0 calc(12px + 8 * ((100vw - 370px) / (1180 - 370))) 0;
+			line-height: calc(2.4rem + 4 * ((100vw - 370px) / (1180 - 370)));
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 12 * (100vw / 370)) 0;
+			line-height: calc(0rem + 24 * (100vw / 370));
+		}
+	}
+	.about__form {
+		@include flex(stretch, space-between);
+		@media screen and (max-width: $breackpointLGMax) {
+			flex-direction: column;
+		}
+	}
+	.about__input {
+		@media screen and (min-width: $breackpointXLMin) {
+			width: 55%;
+		}
+		@media screen and (max-width: $breackpointLGMax) {
+			margin: 0 0 12px 0;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 12 * (100vw / 370)) 0;
+		}
+	}
+	.about__btn {
+		@media screen and (min-width: $breackpointXLMin) {
+			width: 43%;
+		}
+	}
+}

@@ -1,0 +1,155 @@
+.send {
+	background-color: $backgroundPrimaryColor;
+	.send__body {
+		@media screen and (min-width: $breackpointLGMin) {
+			padding: calc(0px + 80 * ((100vw - 769px) / (1180 - 769))) calc(0px + 65 * ((100vw - 769px) / (1180 - 769)));
+		}
+		@media screen and (min-width: $breackpointXLMin) {
+			box-shadow: 0px 4px 40px rgba(148, 196, 40, 0.25);
+			border-radius: 8px;
+		}
+		@media screen and (min-width: $breackpointXXLMin) {
+			padding: 80px 65px;
+		}
+	}
+	.send__wrapper {
+		@media screen and (min-width: $breackpointLGMin) {
+			position: relative;
+		}
+	}
+	.send__baner {
+		@media screen and (min-width: $breackpointLGMin) {
+			width: 50%;
+			margin: auto 0 auto auto;
+		}
+	}
+	.send__headline {
+		@media screen and (min-width: $breackpointXXLMin) {
+			margin: 0 0 45px 0;
+		}
+		@media screen and (max-width: $breackpointXLMax) {
+			margin: 0 0 calc(24px + 21 * ((100vw - 370px) / (1180 - 370))) 0;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 24 * (100vw / 370)) 0;
+		}
+	}
+	.send__title {
+		font-family: 'ubuntuBold';
+		@media screen and (min-width: $breackpointXXLMin) {
+			margin: 0 0 24px 0;
+			font-size: 3.2rem;
+			line-height: 4.1rem;
+		}
+		@media screen and (max-width: $breackpointXLMax) {
+			margin: 0 0 calc(16px + 8 * ((100vw - 370px) / (1180 - 370))) 0;
+			font-size: calc(2.4rem + 8 * ((100vw - 370px) / (1180 - 370)));
+			line-height: calc(3.2rem + 9 * ((100vw - 370px) / (1180 - 370)));
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 0 calc(0px + 16 * (100vw / 370)) 0;
+		}
+	}
+	.send__description {
+		font-size: 1.6rem;
+		line-height: 2.2rem;
+		color: $textSecondaryColor;
+	}
+	.send__picture {
+		@media screen and (min-width: $breackpointLGMin) {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(0, -50%);
+		}
+		@media screen and (min-width: $breackpointXXLMin) {
+			width: calc(((1180px - 30px) / 100) * 40);
+			height: calc(((1180px - 30px) / 100) * (341 / (475 / 40)));
+		}
+		@media screen and (max-width: $breackpointXLMax) {
+			width: calc(((100vw - 30px) / 100) * 40);
+			height: calc(((100vw - 30px) / 100) * (341 / (475 / 40)));
+		}
+		@media screen and (max-width: $breackpointMDMax) {
+			width: calc(((100vw - 30px) / 100) * 100);
+			height: calc(((100vw - 30px) / 100) * (341 / (475 / 100)));
+			margin: 0 auto 24px auto;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			margin: 0 auto calc(0px + 24 * (100vw / 370)) auto;
+		}
+	}
+	// .send__img {
+	// }
+	.send__form {
+		@include removeMB;
+		@media screen and (min-width: $breackpointXLMin) {
+			@include flex(stretch, space-between, row, wrap);
+		}
+		@media screen and (min-width: $breackpointXXLMin) {
+			& > * {
+				margin-bottom: 24px;
+			}
+		}
+		@media screen and (max-width: $breackpointXLMax) {
+			& > * {
+				margin: 0 0 calc(12px + 12 * ((100vw - 370px) / (1180 - 370))) 0;
+			}
+		}
+		@media screen and (max-width: $breackpointLGMax) {
+			& > * {
+				width: 100%;
+			}
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			& > * {
+				margin: 0 0 calc(0px + 12 * (100vw / 370)) 0;
+			}
+		}
+	}
+	.send__fieldset {
+		position: relative;
+		@media screen and (min-width: $breackpointXLMin) {
+			&._input-name {
+				width: 40%;
+			}
+			&._input-phone {
+				width: 55%;
+			}
+		}
+		&._no-valid {
+			.send__label {
+				transform: scale(1);
+			}
+		}
+	}
+	.send__input {
+		width: 100%;
+	}
+	.send__label {
+		position: absolute;
+		top: -20%;
+		font-size: 1rem;
+		color: $errorColor;
+		background-color: $whiteColor;
+		border: 1px solid $errorColor;
+		transform: scale(0);
+		border-radius: 40px;
+		transition: $delay;
+		user-select: none;
+		@media screen and (min-width: $breackpointSMMin) {
+			left: 20px;
+			padding: 3px 10px;
+		}
+		@media screen and (max-width: $breackpointXSMax) {
+			left: calc(0px + 20 * (100vw / 370));
+			padding: calc(0px + 3 * (100vw / 370)) calc(0px + 10 * (100vw / 370));
+		}
+	}
+	.send__btn {
+		line-height: 70%;
+		@media screen and (min-width: $breackpointXLMin) {
+			width: 60%;
+		}
+	}
+}
