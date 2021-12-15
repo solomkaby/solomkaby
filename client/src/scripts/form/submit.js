@@ -8,7 +8,7 @@ import emailjs from 'emailjs-com'
 
 export const submitForm = async e => {
 	e.preventDefault()
-	clearFomr()
+	
 	if ($btnSendForm.classList.contains('_disable')) return
 
 	const { value: name } = $inputUserName
@@ -20,7 +20,8 @@ export const submitForm = async e => {
 		name,
 		phone,
 	}
-
+	
+	clearFomr()
 	await emailjs.send('service_solomka_id', 'solomka_email_id', sendData, 'user_CQyKldP8r2sZRGhvJbXfs')
 	await showModalSuccess(name)
 
