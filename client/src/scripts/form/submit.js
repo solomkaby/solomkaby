@@ -7,7 +7,7 @@ import emailjs from 'emailjs-com'
 
 export const submitForm = async e => {
 	e.preventDefault()
-
+	
 	if ($btnSendForm.classList.contains('_disable')) return
 
 	const { value: name } = $inputUserName
@@ -40,23 +40,3 @@ const clearFomr = () => {
 	$inputUserPhone.value = ''
 	$btnSendForm.classList.add('_disable')
 }
-
-// const modalData = {
-// 	type: 'success',
-// 	title: 'name',
-// 	description: 'Мы перезвоним вам в ближайшее время',
-// }
-
-// try {
-// 	const response = await emailjs.send('service_solomka_id', 'solomka_email_id', sendData, 'user_CQyKldP8r2sZRGhvJbXfs')
-// } catch (error) {
-// 	console.log(error);
-// 	// if (response.status > 399) {
-// 	// 	showModal('error', 'Сообщение не отправлено!', 'Произошел сбой сервера, попробуйте отправить сообщение позже.')
-// 	// } else {
-// 	// }
-
-// } finally {
-// 	await showModal(...modalData)
-// 	clearFomr()
-// }
