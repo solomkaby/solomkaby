@@ -1,8 +1,7 @@
 import { $inputUserName, $inputUserPhone, $btnSendForm } from './validator'
 import { getCorrectCallLink } from '../utils'
 import { getFullDate } from '../utils'
-// import { handlerRequest } from '../request'
-import { showModalSuccess } from '../UI/modal'
+import { showModal } from '../UI/modal'
 
 import emailjs from 'emailjs-com'
 
@@ -21,19 +20,19 @@ export const submitForm = async e => {
 		phone,
 	}
 
-	await emailjs.send('service_solomka_id', 'solomka_email_id', sendData, 'user_CQyKldP8r2sZRGhvJbXfs')
-	await showModalSuccess(name)
-	await clearFomr()
+	try {
+		const response = await emailjs.send('service_solomka_id', 'solomka_email_id', sendData, 'user_CQyKldP8r2sZRGhvJbXfs')
 
-	// handlerRequest('/', 'POST', userData).then(data => {
-	// 	const { name, status } = data
+		if (response.status > 399) {
+			throw new Error('Произошел сбой сервера, попробуйте отправить сообщение позже')
+		} else {
+			showModal('success', name, 'Мы перезвоним вам в ближайшее время')
+		}
+	} catch (error) {
+		showModal('error', 'Сообщение не отправлено!', 'Произошел сбой сервера, попробуйте отправить сообщение позже.')
+	}
 
-	// 	if (status === 200) {
-		// showModalSuccess(name)
-		// clearFomr()
-	// console.log(data)
-	// 	}
-	// })
+	clearFomr()
 }
 
 const clearFomr = () => {
@@ -41,3 +40,23 @@ const clearFomr = () => {
 	$inputUserPhone.value = ''
 	$btnSendForm.classList.add('_disable')
 }
+
+// const modalData = {
+// 	type: 'success',
+// 	title: 'name',
+// 	description: 'Мы перезвоним вам в ближайшее время',
+// }
+
+// try {
+// 	const response = await emailjs.send('service_solomka_id', 'solomka_email_id', sendData, 'user_CQyKldP8r2sZRGhvJbXfs')
+// } catch (error) {
+// 	console.log(error);
+// 	// if (response.status > 399) {
+// 	// 	showModal('error', 'Сообщение не отправлено!', 'Произошел сбой сервера, попробуйте отправить сообщение позже.')
+// 	// } else {
+// 	// }
+
+// } finally {
+// 	await showModal(...modalData)
+// 	clearFomr()
+// }

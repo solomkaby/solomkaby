@@ -4,12 +4,9 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"build": "webpack",
-		"clientwatch": "webpack-dev-server --open",
-		"start": "node app.js",
-		"serverwatch": "nodemon app.js",
-		"dev": "cross-env NODE_ENV=development concurrently \"npm run clientbuild\" \"npm run serverwatch\"",
-		"prod": "cross-env NODE_ENV=production concurrently \"npm run clientbuild\" \"npm run serverstart\"",
+		"dev": "cross-env NODE_ENV=development webpack",
+		"build": "cross-env NODE_ENV=production webpack",
+		"watch": "cross-env NODE_ENV=development webpack-dev-server --open",
 		"stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
 	},
 	"browserslist": "> 0.25%, not dead",
@@ -31,14 +28,12 @@
 		"autoprefixer": "^10.4.0",
 		"babel-loader": "^8.2.3",
 		"clean-webpack-plugin": "^4.0.0",
-		"concurrently": "^6.3.0",
 		"cross-env": "^7.0.3",
 		"css-loader": "^6.5.1",
 		"html-loader": "^3.0.1",
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^2.4.4",
 		"node-sass": "^6.0.1",
-		"nodemon": "^2.0.14",
 		"optimize-css-assets-webpack-plugin": "^6.0.1",
 		"postcss": "^8.3.11",
 		"postcss-loader": "^6.2.0",
@@ -52,11 +47,8 @@
 	},
 	"dependencies": {
 		"animate.css": "^4.1.1",
-		"config": "^3.3.6",
 		"emailjs-com": "^3.2.0",
-		"express": "^4.17.1",
 		"imask": "^6.2.2",
-		"nodemailer": "^6.7.2",
 		"wow.js": "^1.2.2"
 	}
 }

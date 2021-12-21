@@ -5,10 +5,9 @@ const TerserWebpackPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const path = require('path')
-const config = require('config')
 const autoprefixer = require('autoprefixer')
 
-const PORT = config.get('port')
+const PORT = process.env.PORT || 5000
 const isProd = process.env.NODE_ENV === 'production'
 const isDev = !isProd
 
