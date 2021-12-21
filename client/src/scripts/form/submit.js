@@ -21,6 +21,8 @@ export const submitForm = async e => {
 	}
 
 	try {
+		$btnSendForm.classList.add('_disable')
+
 		const response = await emailjs.send('service_solomka_id', 'solomka_email_id', sendData, 'user_CQyKldP8r2sZRGhvJbXfs')
 
 		if (response.status > 399) {
@@ -38,5 +40,4 @@ export const submitForm = async e => {
 const clearFomr = () => {
 	$inputUserName.value = ''
 	$inputUserPhone.value = ''
-	$btnSendForm.classList.add('_disable')
 }
